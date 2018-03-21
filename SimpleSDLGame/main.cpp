@@ -29,19 +29,35 @@ int main( int argc, char* args[])
 {
 	try 
 	{
+		bool quitGame = false;
+		SDL_Event e;
+
 		// Init SDL Components
 		sdlInit();
 
 		// Create Window
 		Window win(TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-		// wait for 2 sec
-		SDL_Delay(2000);
+		while (!quitGame)
+		{
+			// Handel events on queue
+			while (SDL_PollEvent(&e) != 0)
+			{
+				// request quit
+				if (e.type == SDL_QUIT)
+					quitGame = true;
+			}
+		}
 
 	}
 	catch (string* eMsg) 
 	{
 		printf(eMsg->c_str());
+
+		delete(eMsg);
+
+		SDL_Quit();
+		return -1;
 	}
 
 	// Shut down components

@@ -4,6 +4,8 @@
 #include <SDL.h>
 #include <string>
 
+#include "utility.h"
+
 using std::string;
 
 
