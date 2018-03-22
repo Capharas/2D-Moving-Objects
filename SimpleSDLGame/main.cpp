@@ -7,6 +7,7 @@ Add Project description later
 #include <string>
 #include <stdio.h>
 
+#include "EventHandler.h"
 #include "Window.h"
 
 
@@ -30,7 +31,7 @@ int main( int argc, char* args[])
 	try 
 	{
 		bool quitGame = false;
-		SDL_Event e;
+		EventHandler eventHandler;
 
 		// Init SDL Components
 		sdlInit();
@@ -41,12 +42,7 @@ int main( int argc, char* args[])
 		while (!quitGame)
 		{
 			// Handel events on queue
-			while (SDL_PollEvent(&e) != 0)
-			{
-				// request quit
-				if (e.type == SDL_QUIT)
-					quitGame = true;
-			}
+			quitGame = eventHandler.handleEvents();
 		}
 
 	}

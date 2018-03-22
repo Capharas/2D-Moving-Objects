@@ -122,11 +122,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="utility.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EventHandler.h" />
     <ClInclude Include="utility.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
