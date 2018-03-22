@@ -1,8 +1,8 @@
 #ifndef FUNC_UTILITY
 #define FUNC_UTILITY
 
-#include <string>
 #include <SDL.h>
+#include <string>
 
 using std::string;
 

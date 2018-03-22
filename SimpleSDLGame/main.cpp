@@ -8,6 +8,7 @@ Add Project description later
 #include <stdio.h>
 
 #include "EventHandler.h"
+#include "GameSystem.h"
 #include "Window.h"
 
 
@@ -30,20 +31,23 @@ int main( int argc, char* args[])
 {
 	try 
 	{
-		bool quitGame = false;
-		EventHandler eventHandler;
+
 
 		// Init SDL Components
 		sdlInit();
 
+		// Main Components
+		EventHandler eventHandler;
+
 		// Create Window
 		Window win(TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-		while (!quitGame)
+		while (!GameSystem::getQuitGame())
 		{
 			// Handel events on queue
-			quitGame = eventHandler.handleEvents();
+			eventHandler.handleEvents();
 		}
+
 
 	}
 	catch (string* eMsg) 

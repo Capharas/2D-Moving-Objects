@@ -14,15 +14,11 @@ EventHandler::~EventHandler()
 }
 
 
-bool EventHandler::handleEvents()
+void EventHandler::handleEvents()
 {
 	while (SDL_PollEvent(m_event) != 0)
 	{
 		if (m_event->type == SDL_QUIT)
-			// Will need to change this later
-			return true;
-
-
-		return false;
+			GameSystem::setQuitGame();
 	}
 }
